@@ -19,7 +19,7 @@ export default class About extends React.Component{
                     </Header>
                     <Content>
                         <Text>
-                            Bienvenu sur la page de recherchefdgd
+                            Bienvenu sur la page de recherche avec modification
                         </Text>
                     </Content>
                 </Container>

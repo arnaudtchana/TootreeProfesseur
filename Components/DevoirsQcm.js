@@ -3,7 +3,7 @@ import {View,StyleSheet,TextInput,Text} from 'react-native'
 import {Icon, Button, Container, Header, Content, Left} from 'native-base'
 import {StyleProvider} from 'native-base'
 import getTheme from '../native-base-theme/components'
-export default class ClassesGeneralStats extends React.Component{
+export default class DevoirsQcm extends React.Component{
 
     constructor (props) {
         super (props)
@@ -14,14 +14,11 @@ export default class ClassesGeneralStats extends React.Component{
             <View style={{flex: 1, flexDirection: 'row',justifyContent: 'space-between',
                 alignItems: 'stretch',borderBottomColor:'#707070',marginTop:5,marginBottom:5,
                 borderBottomWidth:0.80}}>
-                <View style={styles.classes}><Text style={styles.text}>Classe: </Text></View>
                 <View style={styles.classesname}><Text style={styles.textClassName}>{this.props.className}</Text></View>
-                <View style={styles.subjectCss}><Text ellipsizeMode='tail' style={styles.textSubject}> {this.props.subject}</Text></View>
+                <View style={styles.titreQcm}><Text numberOfLines={1} ellipsizeMode='tail' style={[styles.textTitreQcm,styles.text]}>{this.props.textTitreQcm} </Text></View>
+                <View style={styles.titreMoyenne}><Text numberOfLines={1} ellipsizeMode='tail' style={styles.textTitreMoyenne}> {this.props.titreMoyenne}</Text></View>
                 <View style={styles.pourcentageCss}>
-                    <Text style={[styles.text,styles.couleurVerte]}>&#9679; {this.props.understandingPercentage}</Text>
-                </View>
-                <View style={styles.pourcentageCss}>
-                    <Text style={[styles.text,styles.couleurOrange]}>&#9679; {this.props.unUnderstandingPercentage}</Text>
+                    <Text style={[styles.text,styles.couleurVerte]}>&#9679; {this.props.moyenneClasse}</Text>
                 </View>
             </View>
         )
@@ -38,28 +35,30 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize:10,
     },
-    textSubject:{
+    textTitreMoyenne:{
         fontSize:10,
         fontFamily:'Roboto',
-        color:'#AAAAAA'
+        color:'#AAAAAA',
+        width:80,
     },
     viewText:{
         textAlign:'center',
     },
     pourcentageCss:{
         textAlign:'center',
-        width:'12%'
     },
-    subjectCss:{
+    titreMoyenne:{
         textAlign:'center',
         width:'36%',
         fontFamily:'Roboto',
+        flex:1
     },
     classesname: {
         width:'25%',
     },
-    classes:{
-        width:'15%'
+    titreQcm:{
+        width:'15%',
+        flex:1
     },
     ligne:{
         borderTopColor:'#707070',
@@ -70,6 +69,9 @@ const styles = StyleSheet.create({
     },
     couleurOrange:{
         color:'#F0785A'
+    },
+    textTitreQcm:{
+        width:60
     }
 
 })
